@@ -1,0 +1,32 @@
+{
+  "name": "typescripter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modeverv/I_am_be_a_TypeScripter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/modeverv/I_am_be_a_TypeScripter/issues"
+  },
+  "homepage": "https://github.com/modeverv/I_am_be_a_TypeScripter#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.3.0",
+    "awesome-typescript-loader": "^3.4.1",
+    "browser-sync": "^2.23.6",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^2.7.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
