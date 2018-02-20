@@ -49,7 +49,7 @@ VSCode素敵。Emacsがいらなくなってきている。markdownもライブ�
 - jQueryの読み込み
 ### 2018/02/20
 - Windows環境での開発環境構築、ワークフローの構築
-- 1.　を完了(復習必要)
+- 一つ目のURLを完了(復習必要)
 
 ## TODO
 - TypeScriptの文法理解
