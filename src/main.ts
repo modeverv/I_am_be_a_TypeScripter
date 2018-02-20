@@ -4,7 +4,7 @@ namespace module1 {
     export class foo{
         // JQueryオブジェクトを受け取る
         // Jは大文字
-        constructor(private element:JQuery){}
+        constructor(public element:JQuery){}
 
         // 色を変更する
         public color(color:string){
@@ -15,6 +15,7 @@ namespace module1 {
 
 $(function(){
   var foo = new module1.foo($('div'));
-  foo.color('blue');
+  foo.color('green'); 
+  foo.element.css('font-size','2em');
 });
 
