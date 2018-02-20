@@ -53,10 +53,10 @@ VSCode素敵。Emacsがいらなくなってきている。markdownもライブ�
 
 ## TODO
 - TypeScriptの文法理解
-  - 1. https://www.buildinsider.net/language/quicktypescript/01
-  - 2. http://www.atmarkit.co.jp/ait/articles/1611/08/news029.html
-  - 3. http://www.atmarkit.co.jp/ait/articles/1611/08/news029_2.html
-  - 4. http://www.atmarkit.co.jp/ait/articles/1611/08/news029_3.html
+  1. https://www.buildinsider.net/language/quicktypescript/01
+  1. http://www.atmarkit.co.jp/ait/articles/1611/08/news029.html
+  1. http://www.atmarkit.co.jp/ait/articles/1611/08/news029_2.html
+  1. http://www.atmarkit.co.jp/ait/articles/1611/08/news029_3.html
 
 ## 所要時間
 - 2018/02/19 5H
