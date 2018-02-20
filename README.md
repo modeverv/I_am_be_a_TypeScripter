@@ -49,14 +49,15 @@ VSCode素敵。Emacsがいらなくなってきている。markdownもライブ�
 - jQueryの読み込み
 ### 2018/02/20
 - Windows環境での開発環境構築、ワークフローの構築
+- 1.　を完了(復習必要)
 
 ## TODO
 - TypeScriptの文法理解
-  - https://www.buildinsider.net/language/quicktypescript/01
-  - http://www.atmarkit.co.jp/ait/articles/1611/08/news029.html
-  - http://www.atmarkit.co.jp/ait/articles/1611/08/news029_2.html
-  - http://www.atmarkit.co.jp/ait/articles/1611/08/news029_3.html
+  - 1. https://www.buildinsider.net/language/quicktypescript/01
+  - 2. http://www.atmarkit.co.jp/ait/articles/1611/08/news029.html
+  - 3. http://www.atmarkit.co.jp/ait/articles/1611/08/news029_2.html
+  - 4. http://www.atmarkit.co.jp/ait/articles/1611/08/news029_3.html
 
 ## 所要時間
 - 2018/02/19 5H
-- 2018/02/20 1H
+- 2018/02/20 3H
