@@ -59,6 +59,7 @@ VSCode素敵。Emacsがいらなくなってきている。markdownもライブ�
   1. http://www.atmarkit.co.jp/ait/articles/1611/08/news029_3.html
   1. https://qiita.com/uhyo/items/e2fdef2d3236b9bfe74a
   1. https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#typescript-21
+  1. await/async https://qiita.com/soarflat/items/1a9613e023200bbebcb3
 
 ## 所要時間
 - 2018/02/19 5H
