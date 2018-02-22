@@ -254,7 +254,7 @@ template literalsなら書ける！`;
     he(dog);
 
     // 制御フローベースの型解析
-    ( (x?: string) => {
+    ((x?: string) => {
         if (typeof x === "undefined") {
             x = "foo"
         }
@@ -271,9 +271,29 @@ template literalsなら書ける！`;
 
     // null非許容
     var s: string | null = null; // 共用型を使ってnullを通す
-    
+
     // ?は省略可能を表す nullableではないよー
     ((x?) => o("hello"))();
+
+    // async / await
+    // IE11ではまだ動かない
+    function loadData(url: string) {
+        return new Promise(resolve => {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = () => {
+                resolve(xhr.response);
+            };
+            xhr.open("GET", url);
+            xhr.send(null);
+        });
+    }
+
+    async function start() {
+        let obj = await loadData("inde.html");
+        console.log(obj);
+    }
+
+    start();
 }
 
 $(function () {
