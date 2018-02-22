@@ -4,19 +4,19 @@ import * as $ from 'jquery'
 
 namespace module1 {
     var o = (str: any): void => {
-        $("#output").html($("#output").html() + "\n<li>" + str + "</li>");
+        $("#output").html("\n<li>" + str + "</li>\n" + $("#output").html());
     }
 
     // exportとはなんぞや？
-    export class foo{
+    export class foo {
         // JQueryオブジェクトを受け取る
         // Jは大文字
-        constructor(public element:JQuery){}
+        constructor(public element: JQuery) { }
 
         // 色を変更する
-        public color(color:string){
-            this.element.css('color',color);
-        }   
+        public color(color: string) {
+            this.element.css('color', color);
+        }
     }
 
     // クラスとプロパティ
@@ -125,13 +125,13 @@ namespace module1 {
     obj.name = "Instance";
     var name = "Global";
 
-　　　// Hello, Instance and Hello, Global と表示される
+    // Hello, Instance and Hello, Global と表示される
     o(obj.helloA() + " and " + obj.helloB());
 
     // コンストラクタと引数プロパティ宣言
     class SampleA {
         // 自動で nameがpublicが宣言される
-        constructor(public name: string) {  }
+        constructor(public name: string) { }
     }
 
     // SampleA と等価
@@ -200,20 +200,90 @@ template literalsなら書ける！`;
     o(str3);
 
     // for-in
-    var hoge = { a:  1, b: 2 };
+    var hoge = { a: 1, b: 2 };
     var fuga = [1, 2, 3, 4];
     for (let v in hoge) { o(v); }
     for (let v of fuga) { o(v); }
+
+    // 共用体
+    function unionfunc(param: string | number): string | number {
+        if (typeof param === "string") {
+            return "hello " + param;  // パラメーターparamの値はstring型
+        }
+        //　型アサーション
+        return <number>param * 2;  // パラメーターparamの値はnumber型
+    }
+
+    o(unionfunc("world"));
+    o(unionfunc(10));
+
+    // タグ付き共用型
+    interface Cat {  // Cat型
+        kind: "cat";   // タグ
+        meow: () => void;  // meowは引数なし、戻り値なしの関数
+    }
+
+    interface Dog {  // Dog型
+        kind: "dog";     // タグ
+        bowwow: () => void;  // bowwowは引数なし、戻り値なしの関数
+    }
+
+    type Animal = Cat | Dog;
+
+    var cat: Cat = {  // Cat型のオブジェクト
+        kind: "cat",
+        meow: function () { o("meow"); }
+    }
+
+    var dog: Dog = {  // Dog型のオブジェクト
+        kind: "dog",
+        bowwow: function () { o("bow wow"); }
+    }
+
+    var he = (x: Animal) => {
+        switch (x.kind) {
+            case "cat":
+                x.meow();
+                break;
+            case "dog":
+                x.bowwow();
+                break;
+        }
+    }
+    he(cat);
+    he(dog);
+
+    // 制御フローベースの型解析
+    ( (x?: string) => {
+        if (typeof x === "undefined") {
+            x = "foo"
+        }
+        o(x.toUpperCase());
+    })();
+
+    (function (x: number | number[]) {
+        if (typeof x === "number") {
+            o(x);  // xはnumber型
+            return;
+        }
+        x.forEach(x => o(x * 2));  // if節中でreturnしているので、xはnumber[]型
+    })([1, 2, 3, 4]);
+
+    // null非許容
+    var s: string | null = null; // 共用型を使ってnullを通す
+    
+    // ?は省略可能を表す nullableではないよー
+    ((x?) => o("hello"))();
 }
 
-$(function(){
-  var foo = new module1.foo($('div'));
-  foo.color('green'); 
-  foo.element.css('font-size','0.8em');
+$(function () {
+    var foo = new module1.foo($('div'));
+    foo.color('green');
+    foo.element.css('font-size', '0.8em');
 });
 
 // 型推論
-var str1:string = "string1";
+var str1: string = "string1";
 // var str2:number = "string2"; // エラー
 var str3 = "string3";
 
